@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuka Yamo - KCB Bank Partnership Proposal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        .no-print { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .download-btn { background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%); color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s; }
+        .download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.4); }
+        .container { max-width: 900px; margin: 0 auto; background: white; box-shadow: 0 0 30px rgba(0,0,0,0.1); width: 100%; }
+        .cover-page { background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #00897b 100%); color: white; padding: 100px 60px; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; page-break-after: always; }
+        .cover-page h1 { font-size: 3.5em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .cover-page h2 { font-size: 1.8em; margin-bottom: 30px; font-weight: normal; opacity: 0.95; }
+        .content { padding: 60px; }
+        .section { margin-bottom: 50px; page-break-inside: avoid; }
+        .section-title { color: #004d40; font-size: 2em; border-bottom: 4px solid #00897b; padding-bottom: 10px; margin-bottom: 25px; }
+        .subsection-title { color: #00695c; font-size: 1.4em; margin-top: 30px; margin-bottom: 15px; }
+        .highlight-box { background: #e0f2f1; border-left: 5px solid #00897b; padding: 25px; margin: 25px 0; page-break-inside: avoid; }
+        .kcb-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border: 3px solid #4caf50; border-radius: 12px; padding: 30px; margin: 30px 0; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2); }
+        .kcb-box h3 { color: #2e7d32; font-size: 1.7em; margin-bottom: 15px; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: #f9f9f9; border: 2px solid #00897b; border-radius: 8px; padding: 20px; text-align: center; }
+        .stat-number { font-size: 2em; color: #004d40; font-weight: bold; display: block; margin-bottom: 5px; }
+        .stat-label { color: #666; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; page-break-inside: avoid; }
+        table th { background: #004d40; color: white; padding: 15px; text-align: left; font-weight: bold; }
+        table td { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+        table tr:nth-child(even) { background: #f9f9f9; }
+        ul, ol { margin-left: 30px; margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        .contact-box { background: #004d40; color: white; padding: 40px; text-align: center; margin-top: 50px; border-radius: 8px; }
+        .page-break { page-break-after: always; }
+        @media (max-width: 768px) { body { background: white; } .no-print { display: none !important; } .container { box-shadow: none; max-width: 100%; width: 100%; margin: 0; padding: 0; } .content { padding: 20px; } .cover-page { padding: 40px 20px; } .stats-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <button class="download-btn" onclick="window.print()">📄 Download PDF</button>
+    </div>
+
+    <div class="container">
+        <div class="cover-page">
+            <div>
+                <h1>🌿 AYUKA YAMO</h1>
+                <h2>Human-Validated AI Health Diagnosis Platform</h2>
+                <div style="background: rgba(255,255,255,0.2); padding: 25px; border-radius: 10px; margin: 40px auto; max-width: 600px;">
+                    <p style="font-size: 1.8em; font-weight: bold; margin-bottom: 15px;">PARTNERSHIP PROPOSAL</p>
+                    <p style="font-size: 2.2em; font-weight: bold;">KCB BANK</p>
+                </div>
+                <p style="font-size: 1.3em; margin: 30px 0;">"Your Bank of Possibilities meets Healthcare's Game Changer"</p>
+            </div>
+            <div style="margin-top: 60px; font-size: 1.1em;">
+                <p><strong>Dr. John Otieno</strong> | Tau-Africa | Valenta Holdings Ltd</p>
+                <p>+254 725 646 331 | grouptauafrica@gmail.com</p>
+                <p style="margin-top: 20px; font-size: 1.4em;"><strong>Investment: KSh 20,000,000</strong></p>
+                <p><strong>Launch: January 2025</strong></p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 class="section-title">WHY KCB BANK?</h1>
+            
+            <p style="font-size: 1.15em; margin-bottom: 25px;">KCB Bank is Kenya's premier financial institution with the perfect infrastructure, reach, and innovation track record to make Ayuka Yamo the dominant health-tech platform in East Africa.</p>
+
+            <div class="kcb-box">
+                <h3>🏆 KCB's Strategic Advantages</h3>
+                <ul style="text-align: left; margin: 20px 40px; font-size: 1.05em;">
+                    <li><strong>Digital Banking Leadership:</strong> 9M+ digital customers ready for Ayuka Yamo integration</li>
+                    <li><strong>Nationwide Infrastructure:</strong> 250+ branches across all 47 counties</li>
+                    <li><strong>Health Sector Experience:</strong> NHIF partnerships, medical equipment financing</li>
+                    <li><strong>Innovation Track Record:</strong> KCB 2jiajiri Fund, fintech investments, startup mentorship</li>
+                    <li><strong>Regional Network:</strong> Tanzania, Uganda, Rwanda, Burundi, South Sudan presence</li>
+                    <li><strong>"Bank of Possibilities":</strong> Mission perfectly aligned with healthcare transformation</li>
+                </ul>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">REVENUE OPPORTUNITY FOR KCB</h2>
+                
+                <table>
+                    <tr>
+                        <th>Revenue Source</th>
+                        <th>Monthly</th>
+                        <th>Year 1 Annual</th>
+                        <th>Year 3 Annual</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Transaction Fees (2%)</strong></td>
+                        <td>KSh 585,000</td>
+                        <td>KSh 7.02M</td>
+                        <td>KSh 21.06M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Banking Services</strong><br><small>Validator, agent & business accounts</small></td>
+                        <td>KSh 420,000</td>
+                        <td>KSh 5.04M</td>
+                        <td>KSh 15.12M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Health Loans</strong><br><small>Treatment financing products</small></td>
+                        <td>KSh 250,000</td>
+                        <td>KSh 3M</td>
+                        <td>KSh 12M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Insurance Commissions</strong></td>
+                        <td>KSh 200,000</td>
+                        <td>KSh 2.4M</td>
+                        <td>KSh 7.2M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Float Management Interest</strong></td>
+                        <td>KSh 150,000</td>
+                        <td>KSh 1.8M</td>
+                        <td>KSh 5.4M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>New Customer Acquisition</strong><br><small>1,000+ validators, 500 agents</small></td>
+                        <td>-</td>
+                        <td>KSh 8M</td>
+                        <td>KSh 9.6M</td>
+                    </tr>
+                    <tr style="background: #e0f2f1; font-weight: bold; font-size: 1.15em;">
+                        <td><strong>TOTAL KCB REVENUE</strong></td>
+                        <td><strong>KSh 1.605M</strong></td>
+                        <td style="color: #004d40;"><strong>KSh 27.26M</strong></td>
+                        <td style="color: #004d40;"><strong>KSh 70.38M</strong></td>
+                    </tr>
+                    <tr style="background: #c8e6c9; font-weight: bold; font-size: 1.2em;">
+                        <td><strong>KCB ROI</strong></td>
+                        <td>-</td>
+                        <td style="color: #2e7d32;"><strong>136%</strong></td>
+                        <td style="color: #2e7d32;"><strong>352%</strong></td>
+                    </tr>
+                </table>
+
+                <div class="highlight-box">
+                    <h4 style="color: #004d40; margin-bottom: 15px;">Beyond Direct Revenue: Strategic Value</h4>
+                    <ul>
+                        <li><strong>Market Leadership:</strong> #1 bank for health-tech services in Kenya</li>
+                        <li><strong>Digital Banking Growth:</strong> Attracts tech-savvy, younger demographic</li>
+                        <li><strong>Corporate Relationships:</strong> B2B wellness programs bring large corporates to KCB</li>
+                        <li><strong>Innovation PR:</strong> National recognition for healthcare financing innovation</li>
+                        <li><strong>Regional First-Mover:</strong> Deploy in all KCB East Africa markets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">PROPOSED KCB INVESTMENT</h2>
+                
+                <div class="kcb-box">
+                    <h3>💰 Investment Terms</h3>
+                    <table style="margin: 20px 0;">
+                        <tr>
+                            <td style="border: none; padding: 10px;"><strong>Total Investment:</strong></td>
+                            <td style="border: none; padding: 10px; text-align: right; font-size: 1.2em; color: #2e7d32;"><strong>KSh 20,000,000</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: none; padding: 10px;"><strong>Equity Stake:</strong></td>
+                            <td style="border: none; padding: 10px; text-align: right;"><strong>30%</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: none; padding: 10px;"><strong>Revenue Share:</strong></td>
+                            <td style="border: none; padding: 10px; text-align: right;"><strong>2% of transactions</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: none; padding: 10px;"><strong>Board Seats:</strong></td>
+                            <td style="border: none; padding: 10px; text-align: right;"><strong>2 KCB nominees</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: none; padding: 10px;"><strong>Partnership Duration:</strong></td>
+                            <td style="border: none; padding: 10px; text-align: right;"><strong>5 years (renewable)</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: none; padding: 10px;"><strong>Exclusivity:</strong></td>
+                            <td style="border: none; padding: 10px; text-align: right;"><strong>Exclusive banking partner</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">Funding Utilization (KCB-Optimized)</h3>
+                <table>
+                    <tr>
+                        <th style="width: 60%;">Category</th>
+                        <th style="width: 20%;">Amount</th>
+                        <th style="width: 20%;">%</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Technology Infrastructure</strong><br>
+                        <small>KCB banking API integration, payment gateway, validator platform, AI enhancement, security, cloud hosting</small></td>
+                        <td>KSh 7.5M</td>
+                        <td>37.5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Operational Centers (3)</strong><br>
+                        <small>Nairobi, Kisumu, Mombasa - co-located with KCB branches where possible</small></td>
+                        <td>KSh 4M</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Human Resources</strong><br>
+                        <small>Validator recruitment, customer service (KCB standards), technical support, medical team, management</small></td>
+                        <td>KSh 4M</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing & Launch</strong><br>
+                        <small>Validator recruitment, county campaigns via KCB branches, digital marketing, agent training, launch events</small></td>
+                        <td>KSh 3.2M</td>
+                        <td>16%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regulatory & Compliance</strong><br>
+                        <small>Medical licensing, validator credentialing, data protection, legal</small></td>
+                        <td>KSh 1.3M</td>
+                        <td>6.5%</td>
+                    </tr>
+                    <tr style="background: #e0f2f1; font-weight: bold;">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>KSh 20M</strong></td>
+                        <td><strong>100%</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">KCB-SPECIFIC VALUE ADDITIONS</h2>
+                
+                <div class="kcb-box">
+                    <h3>🏦 Branch Integration Strategy</h3>
+                    <ul style="text-align: left; margin: 20px 40px;">
+                        <li><strong>Customer Onboarding:</strong> Ayuka Yamo services available at all 250+ KCB branches</li>
+                        <li><strong>Cash Payments:</strong> Accept payments via KCB tellers for non-mobile money users</li>
+                        <li><strong>Co-Branded Marketing:</strong> Posters, brochures, banners in all branches</li>
+                        <li><strong>Agent Training:</strong> Use KCB training centers for validator & agent programs</li>
+                        <li><strong>Branch Targets:</strong> 100+ diagnoses/month in flagship branches</li>
+                    </ul>
+                </div>
+
+                <div class="kcb-box">
+                    <h3>💻 KCB Digital Channels</h3>
+                    <ul style="text-align: left; margin: 20px 40px;">
+                        <li><strong>KCB Mobile App:</strong> Integrated Ayuka Yamo services (9M users)</li>
+                        <li><strong>Internet Banking:</strong> Pay for diagnoses via KCB online banking</li>
+                        <li><strong>USSD (*522#):</strong> Basic service access for feature phones</li>
+                        <li><strong>SMS Platform:</strong> Notifications via KCB SMS infrastructure</li>
+                    </ul>
+                </div>
+
+                <div class="kcb-box">
+                    <h3>💳 Financial Products Innovation</h3>
+                    <ul style="text-align: left; margin: 20px 40px;">
+                        <li><strong>Ayuka Health Loan:</strong> Pre-approved loans KSh 5,000-50,000 for treatment</li>
+                        <li><strong>Family Health Savings:</strong> Special accounts with higher interest for medical savings</li>
+                        <li><strong>Validator Premium Accounts:</strong> Exclusive accounts for medical professionals</li>
+                        <li><strong>Agent Credit Lines:</strong> Working capital for AY agents</li>
+                    </ul>
+                </div>
+
+                <div class="kcb-box">
+                    <h3>🛡️ Insurance Partnerships</h3>
+                    <ul style="text-align: left; margin: 20px 40px;">
+                        <li><strong>KCB Bancassurance:</strong> Bundle diagnosis with insurance products</li>
+                        <li><strong>Validator Insurance:</strong> Group medical cover for all validators</li>
+                        <li><strong>Patient Micro-Insurance:</strong> Affordable cover tied to diagnoses</li>
+                        <li><strong>Faster Claims:</strong> Use diagnosis reports for quick insurance claim processing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">MARKET PENETRATION (KCB-Aligned)</h2>
+                
+                <table>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Timeline</th>
+                        <th>Activities</th>
+                        <th>Targets</th>
+                    </tr>
+                    <tr>
+                        <td><strong>KCB Branch Pilot</strong></td>
+                        <td>Months 1-2</td>
+                        <td>• Launch in 10 flagship KCB branches<br>• Train branch staff<br>• Process 1,000 diagnoses<br>• Refine integration</td>
+                        <td>• 1,000 diagnoses<br>• 100 validators<br>• 10 branches active</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digital Integration</strong></td>
+                        <td>Month 3</td>
+                        <td>• Launch on KCB Mobile App<br>• Internet banking integration<br>• USSD activation<br>• Recruit 300 more validators</td>
+                        <td>• 5,000 diagnoses<br>• 400 validators<br>• 60% via digital</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nationwide Rollout</strong></td>
+                        <td>Months 4-9</td>
+                        <td>• All 250+ branches activated<br>• Agency banking points live<br>• 500 validators paid via KCB<br>• Health loans launched</td>
+                        <td>• 30,000 diagnoses<br>• 700 validators<br>• KSh 75M processed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regional Expansion</strong></td>
+                        <td>Months 10-12</td>
+                        <td>• Launch KCB Tanzania & Uganda<br>• Cross-border validator network<br>• Regional health loans</td>
+                        <td>• 56,400 total diagnoses<br>• 1,000 validators<br>• 3 countries</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">COMPETITIVE ADVANTAGES FOR KCB</h2>
+                
+                <div class="highlight-box">
+                    <h4 style="color: #004d40; margin-bottom: 15px;">Why KCB vs. Other Banks?</h4>
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>KCB Advantage</th>
+                        </tr>
+                        <tr>
+                            <td>vs. Equity Bank</td>
+                            <td>• 9M digital users (vs 4M)<br>• Better merchant infrastructure<br>• Stronger corporate B2B relationships<br>• International network (6 countries)</td>
+                        </tr>
+                        <tr>
+                            <td>vs. Co-op Bank</td>
+                            <td>• Superior digital banking platform<br>• Faster innovation cycles<br>• Better fintech partnerships</td>
+                        </tr>
+                        <tr>
+                            <td>vs. NCBA</td>
+                            <td>• Wider branch network (250+ vs 100+)<br>• Larger customer base<br>• More counties covered</td>
+                        </tr>
+                        <tr>
+                            <td>vs. Standard Chartered</td>
+                            <td>• Better mass market understanding<br>• Rural reach<br>• Lower costs for customers</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">250+</span>
+                        <span class="stat-label">KCB Branches</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">9M+</span>
+                        <span class="stat-label">Digital Banking Users</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">6 Countries</span>
+                        <span class="stat-label">East Africa Presence</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">47/47</span>
+                        <span class="stat-label">Counties Covered</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">SUCCESS METRICS (KCB-Specific)</h2>
+                
+                <h3 class="subsection-title">Financial KPIs</h3>
+                <ul>
+                    <li>Transaction volume through KCB: KSh 141M Year 1</li>
+                    <li>KCB revenue: KSh 27.26M Year 1 (136% ROI)</li>
+                    <li>Health loan portfolio: KSh 30M disbursed Year 1</li>
+                    <li>New deposits: KSh 50M (validator, agent, patient accounts)</li>
+                </ul>
+
+                <h3 class="subsection-title">Operational KPIs</h3>
+                <ul>
+                    <li>Branch activity: 100+ diagnoses/month in 20 flagship branches</li>
+                    <li>Digital adoption: 60% via KCB Mobile App & Internet Banking</li>
+                    <li>Validator banking: 80% bank with KCB</li>
+                    <li>Agent relationships: 400+ agents using KCB services</li>
+                </ul>
+
+                <h3 class="subsection-title">Strategic KPIs</h3>
+                <ul>
+                    <li>Brand awareness: 70%+ Ayuka users aware of KCB partnership</li>
+                    <li>Customer satisfaction: >4.5/5 for KCB-Ayuka experience</li>
+                    <li>Market position: #1 bank for health-tech in Kenya</li>
+                    <li>Innovation recognition: National awards for healthcare financing</li>
+                </ul>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">SOCIAL IMPACT (KCB CSR)</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">56,400</span>
+                        <span class="stat-label">Kenyans Diagnosed Year 1</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1,550</span>
+                        <span class="stat-label">Jobs Created</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">KSh 400M</span>
+                        <span class="stat-label">Healthcare Cost Savings</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">60%</span>
+                        <span class="stat-label">From Rural Areas</span>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4 style="color: #004d40;">Aligned with KCB's Mission</h4>
+                    <ul>
+                        <li><strong>Financial Inclusion:</strong> 1,500+ professionals accessing KCB banking</li>
+                        <li><strong>Health Savings Culture:</strong> Special accounts promote medical savings</li>
+                        <li><strong>Credit Access:</strong> Treatment loans help families afford care</li>
+                        <li><strong>Technology Advancement:</strong> Showcases KCB digital capabilities</li>
+                        <li><strong>Economic Development:</strong> KSh 100M+ injected into county economies</li>
+                        <li><strong>Women Empowerment:</strong> 60% of validators are women</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section page-break">
+                <h2 class="section-title">CONCLUSION</h2>
+                
+                <p style="font-size: 1.15em; margin-bottom: 30px; line-height: 1.8;">
+                    KCB Bank is the ideal partner for Ayuka Yamo. Your "Bank of Possibilities" vision, combined with our revolutionary human-validated AI diagnosis system, creates an unstoppable force for healthcare transformation in East Africa.
+                </p>
+
+                <div class="kcb-box">
+                    <h3>Why This Partnership is Perfect</h3>
+                    <ul style="text-align: left; margin: 20px 40px; font-size: 1.05em;">
+                        <li><strong>Perfect Alignment:</strong> KCB's mission matches our healthcare accessibility goal</li>
+                        <li><strong>Infrastructure Ready:</strong> 250+ branches, 9M digital users, nationwide reach</li>
+                        <li><strong>Innovation DNA:</strong> 2jiajiri Fund, fintech partnerships, startup mentorship</li>
+                        <li><strong>Mutual Benefits:</strong> KCB gains KSh 27M Year 1, Ayuka gains trusted banking partner</li>
+                        <li><strong>Market Leadership:</strong> Together we become #1 in health-tech financing</li>
+                        <li><strong>Regional Potential:</strong> KCB's East African presence enables rapid expansion</li>
+                        <li><strong>Massive CSR:</strong> 1,550 jobs, KSh 400M healthcare savings aligned with KCB values</li>
+                    </ul>
+                </div>
+
+                <div class="stats-grid" style="margin: 40px 0;">
+                    <div class="stat-card">
+                        <span class="stat-number">KSh 20M</span>
+                        <span class="stat-label">Investment</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">136%</span>
+                        <span class="stat-label">Year 1 ROI</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-label">Equity Stake</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5 Years</span>
+                        <span class="stat-label">Exclusive Partnership</span>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.3em; margin-top: 40px; text-align: center; font-weight: bold; color: #004d40;">
+                    We are ready to make KCB the banking partner<br>that transforms African healthcare.
+                </p>
+            </div>
+
+            <div class="contact-box">
+                <h3 style="font-size: 2em; margin-bottom: 20px;">NEXT STEPS</h3>
+                <p style="font-size: 1.3em; margin: 25px 0;"><strong>Dr. John Otieno</strong><br>
+                Founder & Chief Medical Officer</p>
+                <p style="font-size: 1.2em; margin: 25px 0;">
+                    📱 +254 725 646 331 / +254 101 646 331<br>
+                    📧 grouptauafrica@gmail.com
+                </p>
+                <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 8px; margin-top: 30px;">
+                    <h4 style="margin-bottom: 20px; font-size: 1.4em;">Proposed Meeting Agenda</h4>
+                    <ol style="text-align: left; display: inline-block; margin: 0 auto; font-size: 1.1em; line-height: 1.8;">
+                        <li>30-minute platform demonstration at KCB Headquarters</li>
+                        <li>Review KCB branch integration strategy</li>
+                        <li>Discuss financial products (health loans, savings accounts)</li>
+                        <li>Present partnership terms and ROI projections</li>
+                        <li>Technical due diligence with KCB IT team</li>
+                        <li>Execute partnership agreement</li>
+                    </ol>
+                </div>
+                <p style="font-size: 1.3em; margin-top: 40px; font-weight: bold;">
+                    Ready to launch January 2025<br>
+                    Let's make KCB Kenya's health-tech banking leader
+                </p>
+            </div>
+
+            <div style="padding: 40px; text-align: center; background: #f5f5f5; margin-top: 50px; font-size: 0.9em; color: #666;">
+                <p><em>This proposal is confidential and intended solely for KCB Bank PLC.</em></p>
+                <p style="margin-top: 10px;">© 2024 Tau-Africa | Valenta Holdings Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onbeforeprint = function() {
+            document.body.style.background = 'white';
+        };
+    </script>
+</body>
+</html>
