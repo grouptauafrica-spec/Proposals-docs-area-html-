@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Disclosure Agreement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #000;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .parties {
+            margin: 30px 0;
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #333;
+        }
+        
+        .party-info {
+            margin: 15px 0;
+        }
+        
+        .party-label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #333;
+            background: transparent;
+            font-family: inherit;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        input[type="text"]:focus, input[type="date"]:focus, textarea:focus {
+            outline: none;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 30px 0 15px 0;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+        
+        p, li {
+            margin: 10px 0;
+            text-align: justify;
+            font-size: 13px;
+        }
+        
+        ul {
+            margin-left: 30px;
+            list-style-type: disc;
+        }
+        
+        .clause {
+            margin: 25px 0;
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .signature-block {
+            margin: 40px 0;
+            padding: 20px;
+            border: 2px solid #333;
+            background: #fafafa;
+        }
+        
+        .signature-canvas {
+            border: 2px dashed #999;
+            background: #fff;
+            cursor: crosshair;
+            display: block;
+            margin: 15px 0;
+            touch-action: none;
+        }
+        
+        .signature-controls {
+            margin: 10px 0;
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #333;
+            background: #fff;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #333;
+            color: #fff;
+        }
+        
+        .btn-primary {
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+        }
+        
+        .btn-primary:hover {
+            background: #0052a3;
+        }
+        
+        .signed-info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .actions {
+            margin-top: 40px;
+            text-align: center;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 40px;
+            }
+            
+            .actions, .signature-controls {
+                display: none !important;
+            }
+            
+            .signature-canvas {
+                border: 1px solid #000;
+            }
+        }
+        
+        .editable-field {
+            background: #fffacd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .checkbox-agreement {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f0f8ff;
+            border: 2px solid #0066cc;
+        }
+        
+        .checkbox-agreement label {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .checkbox-agreement input[type="checkbox"] {
+            margin-top: 3px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="ndaDocument">
+        <div class="header">
+            <h1>NON-DISCLOSURE AGREEMENT</h1>
+        </div>
+        
+        <p><strong>This Non-Disclosure Agreement</strong> ("Agreement") is entered into as of 
+        <input type="date" id="effectiveDate" value="" style="width: 200px; display: inline-block;"> 
+        ("Effective Date")</p>
+        
+        <div class="parties">
+            <p style="text-align: center; font-weight: bold; margin-bottom: 20px;">BETWEEN:</p>
+            
+            <div class="party-info">
+                <div class="party-label">DISCLOSING PARTY:</div>
+                <input type="text" id="disclosingName" placeholder="Your Name/Company Name">
+                <textarea id="disclosingAddress" placeholder="Your Complete Address" rows="2"></textarea>
+                <input type="text" id="disclosingEmail" placeholder="Email Address">
+            </div>
+            
+            <p style="text-align: center; margin: 20px 0; font-weight: bold;">AND:</p>
+            
+            <div class="party-info">
+                <div class="party-label">RECEIVING PARTY:</div>
+                <input type="text" id="receivingName" placeholder="Recipient Name/Company Name">
+                <textarea id="receivingAddress" placeholder="Recipient Complete Address" rows="2"></textarea>
+                <input type="text" id="receivingEmail" placeholder="Email Address">
+            </div>
+        </div>
+
+        <div class="clause">
+            <h2>1. PURPOSE</h2>
+            <p>The parties wish to explore a business opportunity of mutual interest (the "Purpose"), and in connection with the Purpose, the Disclosing Party may disclose certain confidential and proprietary information to the Receiving Party.</p>
+        </div>
+
+        <div class="clause">
+            <h2>2. CONFIDENTIAL INFORMATION</h2>
+            <p>"Confidential Information" means any and all information disclosed by the Disclosing Party to the Receiving Party, whether orally, in writing, electronically, or by any other means, including but not limited to:</p>
+            <ul>
+                <li>Business plans, strategies, and financial information</li>
+                <li>Technical data, trade secrets, and know-how</li>
+                <li>Product designs, specifications, and prototypes</li>
+                <li>Customer lists, supplier information, and marketing plans</li>
+                <li>Any other information marked as "Confidential" or that would reasonably be considered confidential</li>
+            </ul>
+            <p>Confidential Information does not include information that:</p>
+            <ul>
+                <li>Was publicly known at the time of disclosure</li>
+                <li>Becomes publicly known through no breach of this Agreement</li>
+                <li>Was rightfully known by the Receiving Party prior to disclosure</li>
+                <li>Is independently developed by the Receiving Party without use of Confidential Information</li>
+                <li>Is rightfully received from a third party without breach of confidentiality obligations</li>
+            </ul>
+        </div>
+
+        <div class="clause">
+            <h2>3. OBLIGATIONS OF RECEIVING PARTY</h2>
+            <p>The Receiving Party agrees to:</p>
+            <ul>
+                <li>Hold all Confidential Information in strict confidence</li>
+                <li>Not disclose Confidential Information to any third party without prior written consent from the Disclosing Party</li>
+                <li>Use Confidential Information solely for the Purpose stated above</li>
+                <li>Protect Confidential Information using the same degree of care used to protect its own confidential information, but in no event less than reasonable care</li>
+                <li>Limit access to Confidential Information to employees, agents, or representatives who have a legitimate need to know and who have been informed of the confidential nature of such information</li>
+                <li>Not reverse engineer, disassemble, or decompile any prototypes, software, or other tangible objects embodying Confidential Information</li>
+            </ul>
+        </div>
+
+        <div class="clause">
+            <h2>4. REQUIRED DISCLOSURES</h2>
+            <p>If the Receiving Party is required by law, court order, or governmental authority to disclose any Confidential Information, the Receiving Party shall:</p>
+            <ul>
+                <li>Promptly notify the Disclosing Party in writing of such requirement</li>
+                <li>Cooperate with the Disclosing Party in seeking a protective order or other appropriate remedy</li>
+                <li>Disclose only that portion of the Confidential Information that is legally required to be disclosed</li>
+            </ul>
+        </div>
+
+        <div class="clause">
+            <h2>5. OWNERSHIP</h2>
+            <p>All Confidential Information remains the sole property of the Disclosing Party. No license or right under any patent, copyright, trademark, or other intellectual property right is granted or implied by the disclosure of Confidential Information.</p>
+        </div>
+
+        <div class="clause">
+            <h2>6. RETURN OF MATERIALS</h2>
+            <p>Upon written request by the Disclosing Party, or upon termination of this Agreement, the Receiving Party shall:</p>
+            <ul>
+                <li>Promptly return or destroy all documents, materials, and other tangible items containing Confidential Information</li>
+                <li>Provide written certification of such return or destruction</li>
+                <li>The obligations of confidentiality shall survive such return or destruction</li>
+            </ul>
+        </div>
+
+        <div class="clause">
+            <h2>7. TERM AND TERMINATION</h2>
+            <p>This Agreement shall commence on the Effective Date and shall continue for a period of 
+            <input type="text" id="duration" placeholder="e.g., two (2) years" style="width: 200px; display: inline-block;">, 
+            unless earlier terminated by either party upon thirty (30) days written notice.</p>
+            <p>The obligations regarding Confidential Information shall survive termination and continue for a period of 
+            <input type="text" id="survivalPeriod" placeholder="e.g., five (5) years" style="width: 200px; display: inline-block;"> 
+            from the date of disclosure.</p>
+        </div>
+
+        <div class="clause">
+            <h2>8. NO OBLIGATION</h2>
+            <p>This Agreement does not create any obligation for either party to:</p>
+            <ul>
+                <li>Disclose any particular Confidential Information</li>
+                <li>Enter into any further agreement or business relationship</li>
+                <li>Refrain from entering into similar agreements or relationships with third parties</li>
+            </ul>
+        </div>
+
+        <div class="clause">
+            <h2>9. REMEDIES</h2>
+            <p>The Receiving Party acknowledges that unauthorized disclosure or use of Confidential Information could cause irreparable harm and significant injury to the Disclosing Party. Accordingly, the Disclosing Party shall be entitled to seek equitable relief, including injunction and specific performance, in addition to all other remedies available at law or in equity.</p>
+        </div>
+
+        <div class="clause">
+            <h2>10. GENERAL PROVISIONS</h2>
+            <p><strong>Governing Law:</strong> This Agreement shall be governed by and construed in accordance with the laws of 
+            <input type="text" id="governingLaw" placeholder="e.g., Kenya" style="width: 200px; display: inline-block;">, 
+            without regard to its conflicts of law principles.</p>
+            
+            <p><strong>Jurisdiction:</strong> The parties consent to the exclusive jurisdiction of the courts located in 
+            <input type="text" id="jurisdiction" placeholder="e.g., Nairobi, Kenya" style="width: 250px; display: inline-block;"> 
+            for any disputes arising under this Agreement.</p>
+            
+            <p><strong>Entire Agreement:</strong> This Agreement constitutes the entire agreement between the parties regarding the subject matter and supersedes all prior agreements and understandings.</p>
+            
+            <p><strong>Amendment:</strong> This Agreement may only be amended by a written instrument signed by both parties.</p>
+            
+            <p><strong>Waiver:</strong> No waiver of any provision of this Agreement shall be deemed or shall constitute a waiver of any other provision.</p>
+            
+            <p><strong>Severability:</strong> If any provision of this Agreement is found to be unenforceable, the remainder shall continue in full force and effect.</p>
+            
+            <p><strong>Assignment:</strong> Neither party may assign this Agreement without the prior written consent of the other party.</p>
+            
+            <p><strong>Notices:</strong> All notices under this Agreement shall be in writing and delivered to the addresses set forth above.</p>
+        </div>
+
+        <div class="checkbox-agreement">
+            <label>
+                <input type="checkbox" id="agreeCheckbox">
+                <span><strong>I have read and agree to all terms and conditions of this Non-Disclosure Agreement. I understand that by signing below, I am legally bound by this agreement.</strong></span>
+            </label>
+        </div>
+
+        <div class="signature-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">SIGNATURES</h2>
+            
+            <div class="signature-block">
+                <h3>DISCLOSING PARTY:</h3>
+                <canvas id="disclosingSignature" class="signature-canvas" width="700" height="150"></canvas>
+                <div class="signature-controls">
+                    <button onclick="clearSignature('disclosingSignature')">Clear Signature</button>
+                </div>
+                <div>
+                    <input type="text" id="disclosingSignerName" placeholder="Print Full Name">
+                    <input type="text" id="disclosingTitle" placeholder="Title/Position">
+                    <input type="date" id="disclosingDate">
+                </div>
+                <div class="signed-info" id="disclosingSignedInfo">
+                    ✓ Signed digitally
+                </div>
+            </div>
+            
+            <div class="signature-block">
+                <h3>RECEIVING PARTY:</h3>
+                <canvas id="receivingSignature" class="signature-canvas" width="700" height="150"></canvas>
+                <div class="signature-controls">
+                    <button onclick="clearSignature('receivingSignature')">Clear Signature</button>
+                </div>
+                <div>
+                    <input type="text" id="receivingSignerName" placeholder="Print Full Name">
+                    <input type="text" id="receivingTitle" placeholder="Title/Position">
+                    <input type="date" id="receivingDate">
+                </div>
+                <div class="signed-info" id="receivingSignedInfo">
+                    ✓ Signed digitally
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="btn-primary" onclick="downloadPDF()">Download as PDF</button>
+            <button onclick="window.print()">Print Document</button>
+            <button onclick="saveAsHTML()">Save as HTML</button>
+        </div>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.getElementById('effectiveDate').valueAsDate = new Date();
+        document.getElementById('disclosingDate').valueAsDate = new Date();
+        document.getElementById('receivingDate').valueAsDate = new Date();
+
+        // Signature functionality
+        const canvases = {
+            disclosingSignature: document.getElementById('disclosingSignature'),
+            receivingSignature: document.getElementById('receivingSignature')
+        };
+
+        Object.keys(canvases).forEach(canvasId => {
+            const canvas = canvases[canvasId];
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+
+            function getCoordinates(e) {
+                const rect = canvas.getBoundingClientRect();
+                if (e.touches) {
+                    return {
+                        x: e.touches[0].clientX - rect.left,
+                        y: e.touches[0].clientY - rect.top
+                    };
+                }
+                return {
+                    x: e.clientX - rect.left,
+                    y: e.clientY - rect.top
+                };
+            }
+
+            function startDrawing(e) {
+                e.preventDefault();
+                isDrawing = true;
+                const coords = getCoordinates(e);
+                lastX = coords.x;
+                lastY = coords.y;
+            }
+
+            function draw(e) {
+                e.preventDefault();
+                if (!isDrawing) return;
+
+                const coords = getCoordinates(e);
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(coords.x, coords.y);
+                ctx.stroke();
+
+                lastX = coords.x;
+                lastY = coords.y;
+
+                document.getElementById(canvasId + 'Info').style.display = 'block';
+            }
+
+            function stopDrawing(e) {
+                e.preventDefault();
+                isDrawing = false;
+            }
+
+            // Mouse events
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Touch events
+            canvas.addEventListener('touchstart', startDrawing);
+            canvas.addEventListener('touchmove', draw);
+            canvas.addEventListener('touchend', stopDrawing);
+        });
+
+        function clearSignature(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById(canvasId + 'Info').style.display = 'none';
+        }
+
+        function validateForm() {
+            const checkbox = document.getElementById('agreeCheckbox');
+            if (!checkbox.checked) {
+                alert('Please check the agreement box before proceeding.');
+                return false;
+            }
+
+            const disclosingName = document.getElementById('disclosingName').value;
+            const receivingName = document.getElementById('receivingName').value;
+
+            if (!disclosingName || !receivingName) {
+                alert('Please fill in both party names.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function downloadPDF() {
+            if (!validateForm()) return;
+            
+            alert('To download as PDF:\n\n1. Click "Print Document" button\n2. Select "Save as PDF" or "Microsoft Print to PDF" as your printer\n3. Click "Save"\n\nAlternatively, use your browser\'s Print function (Ctrl+P or Cmd+P) and choose "Save as PDF".');
+            window.print();
+        }
+
+        function saveAsHTML() {
+            if (!validateForm()) return;
+
+            const content = document.documentElement.outerHTML;
+            const blob = new Blob([content], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'NDA_' + new Date().toISOString().split('T')[0] + '.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
