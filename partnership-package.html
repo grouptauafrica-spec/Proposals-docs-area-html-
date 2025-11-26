@@ -318,6 +318,27 @@
                 width: 100%;
             }
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background: #0066cc;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
     </style>
 </head>
 <body>
@@ -325,15 +346,15 @@
         <h2>📄 Partnership Documents Suite</h2>
         <p style="margin-bottom: 15px; color: #666;">Select a document to view and customize:</p>
         <div class="button-group">
-            <button class="doc-button active" onclick="showDocument('email')">1. Email Template</button>
-            <button class="doc-button" onclick="showDocument('executive')">2. Executive Summary</button>
-            <button class="doc-button" onclick="showDocument('financial')">3. Financial Projections</button>
-            <button class="doc-button" onclick="showDocument('nda-email')">4. NDA Request Email</button>
+            <button class="doc-button active" id="btn1" onclick="showDoc(1)">1. Email Template</button>
+            <button class="doc-button" id="btn2" onclick="showDoc(2)">2. Executive Summary</button>
+            <button class="doc-button" id="btn3" onclick="showDoc(3)">3. Financial Projections</button>
+            <button class="doc-button" id="btn4" onclick="showDoc(4)">4. NDA Request Email</button>
         </div>
     </div>
 
     <!-- DOCUMENT 1: EMAIL TEMPLATE -->
-    <div class="container document active" id="email">
+    <div class="container document active" id="doc1">
         <div class="email-header">
             <h1 style="color: #0066cc; font-size: 24px;">Email Template for Corporate Outreach</h1>
             <p style="color: #666; font-size: 14px; margin-top: 10px;">Use this template for Airtel, KCB, Co-op Bank, and Equity Bank</p>
@@ -341,12 +362,12 @@
         
         <div class="email-field">
             <label>TO:</label>
-            <input type="text" placeholder="CEO email address (e.g., ceo@airtel.co.ke)" id="recipientEmail">
+            <input type="text" placeholder="CEO email address (e.g., ceo@airtel.co.ke)">
         </div>
         
         <div class="email-field">
             <label>SUBJECT:</label>
-            <input type="text" value="KSh 35M+ Partnership Opportunity - AI Health Diagnosis Platform" id="emailSubject">
+            <input type="text" value="KSh 35M+ Partnership Opportunity - AI Health Diagnosis Platform">
         </div>
         
         <div class="email-body">
@@ -400,29 +421,20 @@
             Tau-Africa | Valenta Holdings Ltd</p>
             
             <p>📱 +254 725 646 331 / +254 101 646 331<br>
-            📧 grouptauafrica@gmail.com<br>
-            🌐 <span class="highlight">[Platform URL]</span></p>
+            📧 grouptauafrica@gmail.com</p>
             
             <p style="margin-top: 30px; padding: 15px; background: #e8f5e9; border-left: 4px solid #28a745;">
             <strong>P.S.</strong> The first mover in this space will dominate Kenya's $500M+ health-tech market. <span class="highlight">[Company Name]</span> has the infrastructure to be that first mover. Let's discuss this week.
-            </p>
-            
-            <p style="margin-top: 20px; font-size: 12px; color: #666;">
-            <strong>Attachments:</strong><br>
-            1. Cover Letter - Strategic Partnership Proposal (PDF)<br>
-            2. Executive Summary - Ayuka Yamo Platform (PDF)<br>
-            3. Financial Projections Overview (PDF)
             </p>
         </div>
         
         <div class="action-buttons">
             <button class="btn-primary" onclick="window.print()">📄 Print/Save as PDF</button>
-            <button class="btn-secondary" onclick="copyToClipboard('email')">📋 Copy Email Text</button>
         </div>
     </div>
 
     <!-- DOCUMENT 2: EXECUTIVE SUMMARY -->
-    <div class="container document" id="executive">
+    <div class="container document" id="doc2">
         <div class="exec-header">
             <h1>AYUKA YAMO</h1>
             <p>Human-Validated AI Health Diagnosis Platform</p>
@@ -431,7 +443,7 @@
         
         <div class="exec-section">
             <h2>🎯 THE OPPORTUNITY</h2>
-            <p>53 million Kenyans lack access to affordable, accurate medical diagnosis. Current options are expensive, time-consuming, and often inaccurate. Ayuka Yamo solves this through the world's first AI diagnosis system validated by three independent licensed medical professionals.</p>
+            <p>53 million Kenyans lack access to affordable, accurate medical diagnosis. Ayuka Yamo solves this through the world's first AI diagnosis system validated by three independent licensed medical professionals.</p>
         </div>
         
         <div class="stats-grid">
@@ -455,176 +467,219 @@
         
         <div class="exec-section">
             <h2>💡 THE INNOVATION</h2>
-            <p><strong>Triple Validation System:</strong></p>
             <div class="value-prop-box">
                 <p style="text-align: center; font-size: 18px; font-weight: bold; color: #28a745;">
                 AI Analysis → 3 Random Licensed Validators → Verified Treatment Protocol
                 </p>
             </div>
-            <p>Unlike pure AI systems that patients don't trust, every Ayuka Yamo diagnosis is independently verified by three licensed medical professionals who earn income for their validation work. This creates 99.2% accuracy while generating flexible income for 1,000+ healthcare professionals.</p>
-        </div>
-        
-        <div class="exec-section">
-            <h2>📊 THE BUSINESS MODEL</h2>
-            <ul class="bullet-list">
-                <li><strong>Patient Fee:</strong> KSh 2,500 per diagnosis (vs KSh 5,000+ for hospital visit)</li>
-                <li><strong>Validator Payment:</strong> KSh 200 per validation (3 validators × KSh 200 = KSh 600)</li>
-                <li><strong>Platform Revenue:</strong> KSh 1,900 per diagnosis (76% margin)</li>
-                <li><strong>Processing Time:</strong> 4-6 hours (vs 1-2 days for hospital)</li>
-                <li><strong>Target Market:</strong> 53M Kenyans, focusing initially on urban/semi-urban (32M)</li>
-            </ul>
         </div>
         
         <div class="exec-section">
             <h2>💰 FINANCIAL PROJECTIONS</h2>
             
-            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                <thead>
-                    <tr style="background: #0066cc; color: white;">
-                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Metric</th>
-                        <th style="padding: 12px; text-align: right; border: 1px solid #ddd;">Year 1</th>
-                        <th style="padding: 12px; text-align: right; border: 1px solid #ddd;">Year 2</th>
-                        <th style="padding: 12px; text-align: right; border: 1px solid #ddd;">Year 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Patients Served</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">56,400</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">146,640</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">381,264</td>
-                    </tr>
-                    <tr style="background: #f8f9fa;">
-                        <td style="padding: 10px; border: 1px solid #ddd;">Platform Revenue</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;"><strong>KSh 276.8M</strong></td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;"><strong>KSh 719.7M</strong></td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;"><strong>KSh 1.87B</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; border: 1px solid #ddd;">Operating Profit</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">KSh 107.2M</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">KSh 278.7M</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">KSh 724.6M</td>
-                    </tr>
-                    <tr style="background: #f8f9fa;">
-                        <td style="padding: 10px; border: 1px solid #ddd;">Jobs Created</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">1,550</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">4,030</td>
-                        <td style="padding: 10px; text-align: right; border: 1px solid #ddd;">10,478</td>
-                    </tr>
-                </tbody>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Year 1</th>
+                    <th>Year 2</th>
+                    <th>Year 3</th>
+                </tr>
+                <tr>
+                    <td>Patients Served</td>
+                    <td>56,400</td>
+                    <td>146,640</td>
+                    <td>381,264</td>
+                </tr>
+                <tr>
+                    <td><strong>Revenue</strong></td>
+                    <td><strong>KSh 277M</strong></td>
+                    <td><strong>KSh 720M</strong></td>
+                    <td><strong>KSh 1.87B</strong></td>
+                </tr>
+                <tr>
+                    <td>Operating Profit</td>
+                    <td>KSh 107M</td>
+                    <td>KSh 279M</td>
+                    <td>KSh 725M</td>
+                </tr>
             </table>
-        </div>
-        
-        <div class="exec-section">
-            <h2>🏆 COMPETITIVE ADVANTAGES</h2>
-            <ul class="bullet-list">
-                <li><strong>15 Years of Medical Protocols:</strong> Proprietary diagnostic algorithms refined through 5,000+ successful patient treatments</li>
-                <li><strong>70% Platform Complete:</strong> Not concept stage - ready to scale with right partnership</li>
-                <li><strong>Human Trust Factor:</strong> Triple validation solves the trust gap that pure AI systems face</li>
-                <li><strong>Network Effect:</strong> More validators = faster processing = better patient experience</li>
-                <li><strong>First Mover Advantage:</strong> No direct competitor with human-validated AI approach</li>
-            </ul>
         </div>
         
         <div class="exec-section">
             <h2>🎯 THE INVESTMENT ASK</h2>
             <div class="value-prop-box">
-                <p style="font-size: 20px; margin-bottom: 15px;"><strong>Investment: KSh 20 Million for 30% Equity</strong></p>
-                <p><strong>Use of Funds:</strong></p>
-                <ul style="margin-top: 10px; margin-left: 20px;">
-                    <li>Platform completion & testing: KSh 6M</li>
-                    <li>Validator recruitment & training: KSh 4M</li>
-                    <li>Marketing & user acquisition: KSh 5M</li>
-                    <li>Partnership integration: KSh 3M</li>
-                    <li>Working capital: KSh 2M</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="exec-section">
-            <h2>🚀 STRATEGIC PARTNERSHIP VALUE</h2>
-            <p><strong>What Strategic Partner Gets:</strong></p>
-            <ul class="bullet-list">
-                <li>KSh 35M+ revenue Year 1 (175% ROI) from transaction fees + ecosystem benefits</li>
-                <li>Exclusive partnership rights (5 years)</li>
-                <li>Integration with existing payment/health infrastructure</li>
-                <li>56,400+ new customers Year 1</li>
-                <li>Leadership position in Kenya's $500M+ health-tech market</li>
-                <li>Regional expansion opportunity (Ethiopia, Tanzania, Uganda)</li>
-            </ul>
-        </div>
-        
-        <div class="exec-section">
-            <h2>⏱️ TIMELINE TO LAUNCH</h2>
-            <ul class="bullet-list">
-                <li><strong>Now - December 2025:</strong> Partnership finalization, platform completion</li>
-                <li><strong>January 2025:</strong> Pilot launch (Nairobi, 500 validators, 2,000 patients)</li>
-                <li><strong>February - March 2025:</strong> Optimization based on pilot feedback</li>
-                <li><strong>April 2025:</strong> National rollout across Kenya</li>
-                <li><strong>Q3 2025:</strong> Regional expansion planning</li>
-            </ul>
-        </div>
-        
-        <div class="exec-section">
-            <h2>👨‍⚕️ THE TEAM</h2>
-            <p><strong>Dr. John Otieno</strong> - Founder & Chief Medical Officer<br>
-            • 15+ years practicing Naturopathic, Allopathic, and Homeopathic medicine<br>
-            • 5,000+ patients successfully treated with 96% success rate<br>
-            • Founder of Tau-Africa (500+ members across 9 African countries)<br>
-            • Medical innovator focused on accessible, affordable healthcare</p>
-        </div>
-        
-        <div class="exec-section">
-            <h2>🎬 THE CALL TO ACTION</h2>
-            <div class="value-prop-box">
-                <p style="font-size: 16px; line-height: 1.8;">
-                Kenya has 53 million people who need better access to accurate diagnosis. We have the technology, the medical expertise, and the business model. We need a strategic partner with the infrastructure and reach to scale this nationwide.
-                </p>
-                <p style="font-size: 16px; margin-top: 15px; font-weight: bold;">
-                Will you join us in transforming healthcare access across Kenya?
-                </p>
+                <p style="font-size: 20px;"><strong>Investment: KSh 20 Million for 30% Equity</strong></p>
+                <p style="margin-top: 10px;"><strong>Year 1 Partner Return: KSh 35M (175% ROI)</strong></p>
             </div>
         </div>
         
         <div class="contact-box">
-            <h3>📞 CONTACT INFORMATION</h3>
+            <h3>📞 CONTACT</h3>
             <p><strong>Dr. John Otieno</strong><br>
-            Founder & Chief Medical Officer<br>
-            Ayuka Yamo AI Health Diagnosis System<br>
-            Tau-Africa | Valenta Holdings Ltd</p>
-            
-            <p style="margin-top: 15px;">
             📱 +254 725 646 331 / +254 101 646 331<br>
-            📧 grouptauafrica@gmail.com<br>
-            🌐 [Platform URL]</p>
-            
-            <p style="margin-top: 15px; font-size: 14px; color: #666;">
-            <strong>Available for platform demonstration at your convenience</strong>
-            </p>
+            📧 grouptauafrica@gmail.com</p>
         </div>
         
         <div class="action-buttons">
             <button class="btn-primary" onclick="window.print()">📄 Print/Save as PDF</button>
-            <button class="btn-secondary" onclick="copyToClipboard('executive')">📋 Copy Text</button>
         </div>
     </div>
 
-    <!-- DOCUMENT 3: NDA REQUEST EMAIL -->
-    <div class="container document" id="nda-email">
+    <!-- DOCUMENT 3: FINANCIAL PROJECTIONS -->
+    <div class="container document" id="doc3">
+        <div class="exec-header">
+            <h1>AYUKA YAMO</h1>
+            <p>Financial Projections & Investment Analysis</p>
+            <p style="font-size: 14px; margin-top: 10px;">5-Year Revenue & Growth Model</p>
+        </div>
+        
+        <div class="exec-section">
+            <h2>💰 INVESTMENT OVERVIEW</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">KSh 20M</span>
+                    <span class="stat-label">Investment</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Equity</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">175%</span>
+                    <span class="stat-label">Year 1 ROI</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">525%</span>
+                    <span class="stat-label">3-Year ROI</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exec-section">
+            <h2>📊 5-YEAR PROJECTIONS</h2>
+            
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th>Diagnoses</th>
+                    <th>Revenue</th>
+                    <th>Profit</th>
+                    <th>Margin</th>
+                </tr>
+                <tr>
+                    <td>Year 1</td>
+                    <td>56,400</td>
+                    <td>KSh 141M</td>
+                    <td>KSh 54M</td>
+                    <td>38.5%</td>
+                </tr>
+                <tr>
+                    <td>Year 2</td>
+                    <td>146,640</td>
+                    <td>KSh 367M</td>
+                    <td>KSh 194M</td>
+                    <td>53.0%</td>
+                </tr>
+                <tr>
+                    <td>Year 3</td>
+                    <td>381,264</td>
+                    <td>KSh 953M</td>
+                    <td>KSh 572M</td>
+                    <td>60.0%</td>
+                </tr>
+                <tr>
+                    <td>Year 4</td>
+                    <td>743,266</td>
+                    <td>KSh 1.86B</td>
+                    <td>KSh 1.16B</td>
+                    <td>62.5%</td>
+                </tr>
+                <tr>
+                    <td>Year 5</td>
+                    <td>1,338,879</td>
+                    <td>KSh 3.35B</td>
+                    <td>KSh 2.15B</td>
+                    <td>64.2%</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="exec-section">
+            <h2>💎 PARTNER ROI</h2>
+            
+            <table>
+                <tr>
+                    <th>Revenue Source</th>
+                    <th>Year 1</th>
+                    <th>Year 3</th>
+                    <th>Year 5</th>
+                </tr>
+                <tr>
+                    <td>Profit Share (30%)</td>
+                    <td>KSh 16.3M</td>
+                    <td>KSh 172M</td>
+                    <td>KSh 645M</td>
+                </tr>
+                <tr>
+                    <td>Transaction Fees</td>
+                    <td>KSh 7.1M</td>
+                    <td>KSh 48M</td>
+                    <td>KSh 167M</td>
+                </tr>
+                <tr>
+                    <td>Ecosystem Benefits</td>
+                    <td>KSh 11.3M</td>
+                    <td>KSh 76M</td>
+                    <td>KSh 268M</td>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td><strong>Total Partner Benefit</strong></td>
+                    <td><strong>KSh 35M</strong></td>
+                    <td><strong>KSh 296M</strong></td>
+                    <td><strong>KSh 1.08B</strong></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="exec-section">
+            <h2>💰 USE OF FUNDS</h2>
+            <p><strong>KSh 20M Investment Breakdown:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Platform Completion: KSh 6M</li>
+                <li>Validator Recruitment: KSh 4M</li>
+                <li>Marketing & Growth: KSh 5M</li>
+                <li>Integration & APIs: KSh 3M</li>
+                <li>Working Capital: KSh 2M</li>
+            </ul>
+        </div>
+        
+        <div class="contact-box">
+            <h3>📞 CONTACT</h3>
+            <p><strong>Dr. John Otieno</strong><br>
+            📱 +254 725 646 331 / +254 101 646 331<br>
+            📧 grouptauafrica@gmail.com</p>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn-primary" onclick="window.print()">📄 Print/Save as PDF</button>
+        </div>
+    </div>
+
+    <!-- DOCUMENT 4: NDA EMAIL -->
+    <div class="container document" id="doc4">
         <div class="email-header">
             <h1 style="color: #0066cc; font-size: 24px;">NDA Request Email Template</h1>
-            <p style="color: #666; font-size: 14px; margin-top: 10px;">Use this when a company requests your full proposal</p>
+            <p style="color: #666; font-size: 14px; margin-top: 10px;">Use when a company requests your full proposal</p>
         </div>
         
         <div class="email-field">
             <label>TO:</label>
-            <input type="text" placeholder="Company contact email" id="ndaRecipient">
+            <input type="text" placeholder="Company contact email">
         </div>
         
         <div class="email-field">
             <label>SUBJECT:</label>
-            <input type="text" value="Ayuka Yamo Full Proposal + NDA" id="ndaSubject">
+            <input type="text" value="Ayuka Yamo Full Proposal + NDA">
         </div>
         
         <div class="email-body">
@@ -632,185 +687,83 @@
             
             <div class="nda-intro">
                 <p><strong>Thank you for your interest in the Ayuka Yamo partnership opportunity!</strong></p>
-                <p style="margin-top: 10px;">I'm excited to share our complete 20-page partnership proposal, which includes proprietary medical protocols, technical specifications, and detailed integration strategies developed over 15 years of practice.</p>
             </div>
             
             <p>To protect both parties' interests, I'm requesting we formalize our discussion through a mutual Non-Disclosure Agreement before sharing the full proposal.</p>
             
-            <p><strong>What's included in the full proposal:</strong></p>
-            <ul style="margin: 15px 0 15px 30px; line-height: 1.8;">
-                <li>Complete technical architecture and AI algorithm details</li>
-                <li>Proprietary medical diagnostic protocols (15 years of refinement)</li>
-                <li>Detailed financial models and 5-year projections</li>
-                <li>Validator network structure and training methodology</li>
-                <li>Integration roadmap with <span class="highlight">[Company Name]</span>'s existing infrastructure</li>
-                <li>Regional expansion strategy and market analysis</li>
-                <li>IP ownership and licensing framework</li>
-            </ul>
-            
             <div class="steps-list">
                 <p><strong>📋 Next Steps:</strong></p>
                 <ol>
-                    <li><strong>Review the attached NDA</strong> - It's a standard mutual agreement protecting both parties' confidential information</li>
-                    <li><strong>Sign digitally</strong> - The NDA includes digital signature capability, or you can print, sign, and scan</li>
-                    <li><strong>Return signed NDA</strong> - Email it back to grouptauafrica@gmail.com</li>
-                    <li><strong>Receive full proposal</strong> - I'll send the complete package within 24 hours of receiving your signed NDA</li>
+                    <li>Review the attached NDA</li>
+                    <li>Sign digitally or print/scan</li>
+                    <li>Return to grouptauafrica@gmail.com</li>
+                    <li>Receive full proposal within 24 hours</li>
                 </ol>
             </div>
             
-            <p><strong>Why the NDA matters:</strong></p>
-            <p>The full proposal contains 15 years of medical research, proprietary diagnostic algorithms, and detailed business strategies that represent significant intellectual property. The NDA ensures that:</p>
+            <p><strong>What's included in the full proposal:</strong></p>
             <ul style="margin: 15px 0 15px 30px;">
-                <li>Your evaluation process remains confidential</li>
-                <li>Our medical protocols and business strategies are protected</li>
-                <li>Both parties can discuss openly without concern</li>
-                <li>We establish a professional foundation for potential partnership</li>
+                <li>Complete technical architecture</li>
+                <li>Proprietary medical protocols</li>
+                <li>Detailed 5-year financials</li>
+                <li>Integration roadmap</li>
+                <li>Regional expansion strategy</li>
             </ul>
             
-            <p><strong>Standard terms include:</strong></p>
-            <ul style="margin: 15px 0 15px 30px;">
-                <li>2-year term for the agreement</li>
-                <li>5-year confidentiality obligation for disclosed information</li>
-                <li>Mutual protection for both parties</li>
-                <li>Standard exclusions (publicly available information, independently developed, etc.)</li>
-            </ul>
-            
-            <div class="value-prop-box">
-                <p style="font-weight: bold; margin-bottom: 10px;">⚡ FAST-TRACK OPTION:</p>
-                <p>If you'd prefer to discuss terms before signing the NDA, I'm available for a call or meeting this week. We can review the NDA together and address any questions immediately.</p>
-            </div>
-            
-            <p><strong>Timeline:</strong></p>
-            <p>Once the NDA is signed, I'll provide:</p>
-            <ul style="margin: 15px 0 15px 30px;">
-                <li>Full 20-page partnership proposal (PDF)</li>
-                <li>Financial model spreadsheet (Excel)</li>
-                <li>Technical architecture documents</li>
-                <li>Platform demonstration access credentials</li>
-                <li>Integration specifications for <span class="highlight">[Company Name]</span> systems</li>
-            </ul>
-            
-            <p>I'll also be available for follow-up questions, platform demonstrations, and detailed discussions with your technical and business teams.</p>
-            
-            <p><strong>Why move quickly:</strong></p>
-            <p>We're targeting a January 2025 pilot launch, and having a strategic partner confirmed by mid-December is critical to our timeline. Several organizations have expressed interest, but <span class="highlight">[Company Name]</span> remains our preferred partner due to your <span class="highlight">[specific strength - infrastructure/reach/expertise]</span>.</p>
-            
-            <p>The health-tech market in Kenya is moving fast. The first mover with comprehensive diagnosis capability will dominate this $500M+ market. I believe that should be <span class="highlight">[Company Name]</span>.</p>
-            
-            <p><strong>Questions?</strong></p>
-            <p>Please don't hesitate to reach out if you have any questions about the NDA, the proposal content, or our partnership structure. I'm available for a call at your convenience.</p>
-            
-            <p style="margin-top: 30px;">Looking forward to sharing the full details and discussing how we can transform Kenya's healthcare access together.</p>
-            
-            <p><strong>Best regards,</strong></p>
+            <p>Best regards,</p>
             
             <p><strong>Dr. John Otieno</strong><br>
-            Founder & Chief Medical Officer<br>
-            Ayuka Yamo AI Health Diagnosis System<br>
-            Tau-Africa | Valenta Holdings Ltd</p>
-            
-            <p>📱 +254 725 646 331 / +254 101 646 331<br>
-            📧 grouptauafrica@gmail.com<br>
-            🌐 <span class="highlight">[Platform URL]</span></p>
-            
-            <div style="margin-top: 30px; padding: 15px; background: #e3f2fd; border-left: 4px solid #0066cc;">
-                <p style="font-size: 14px; margin-bottom: 10px;"><strong>📎 ATTACHED DOCUMENTS:</strong></p>
-                <p style="font-size: 14px; line-height: 1.6;">
-                1. Mutual Non-Disclosure Agreement (PDF + Interactive HTML)<br>
-                2. Executive Summary - Ayuka Yamo Platform (PDF)<br>
-                3. Cover Letter - Strategic Partnership Proposal (PDF)
-                </p>
-            </div>
-            
-            <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107;">
-                <p style="font-size: 13px; font-style: italic;">
-                <strong>P.S.</strong> The NDA can be signed digitally using the interactive HTML version (just open in browser, fill details, sign with mouse/touchscreen, and download as PDF). Alternatively, print and sign the PDF version. Either method works perfectly.
-                </p>
-            </div>
+            📱 +254 725 646 331 / +254 101 646 331<br>
+            📧 grouptauafrica@gmail.com</p>
         </div>
         
         <div class="action-buttons">
             <button class="btn-primary" onclick="window.print()">📄 Print/Save as PDF</button>
-            <button class="btn-secondary" onclick="copyToClipboard('nda-email')">📋 Copy Email Text</button>
         </div>
     </div>
 
     <script>
-        function showDocument(docId) {
+        function showDoc(num) {
             // Hide all documents
-            document.querySelectorAll('.document').forEach(doc => {
-                doc.classList.remove('active');
-            });
+            var doc1 = document.getElementById('doc1');
+            var doc2 = document.getElementById('doc2');
+            var doc3 = document.getElementById('doc3');
+            var doc4 = document.getElementById('doc4');
             
-            // Remove active state from all buttons
-            document.querySelectorAll('.doc-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            doc1.style.display = 'none';
+            doc2.style.display = 'none';
+            doc3.style.display = 'none';
+            doc4.style.display = 'none';
             
-            // Show selected document
-            document.getElementById(docId).classList.add('active');
+            // Remove active from all buttons
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var btn3 = document.getElementById('btn3');
+            var btn4 = document.getElementById('btn4');
             
-            // Highlight active button
-            event.target.classList.add('active');
+            btn1.className = 'doc-button';
+            btn2.className = 'doc-button';
+            btn3.className = 'doc-button';
+            btn4.className = 'doc-button';
+            
+            // Show selected document and activate button
+            if (num === 1) {
+                doc1.style.display = 'block';
+                btn1.className = 'doc-button active';
+            } else if (num === 2) {
+                doc2.style.display = 'block';
+                btn2.className = 'doc-button active';
+            } else if (num === 3) {
+                doc3.style.display = 'block';
+                btn3.className = 'doc-button active';
+            } else if (num === 4) {
+                doc4.style.display = 'block';
+                btn4.className = 'doc-button active';
+            }
             
             // Scroll to top
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo(0, 0);
         }
-        
-        function copyToClipboard(docId) {
-            const doc = document.getElementById(docId);
-            const emailBody = doc.querySelector('.email-body');
-            
-            if (emailBody) {
-                const text = emailBody.innerText;
-                
-                // Create temporary textarea
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
-                document.body.appendChild(textarea);
-                textarea.select();
-                
-                try {
-                    document.execCommand('copy');
-                    alert('✅ Email content copied to clipboard! You can now paste it into your email client.');
-                } catch (err) {
-                    alert('❌ Failed to copy. Please select and copy manually.');
-                }
-                
-                document.body.removeChild(textarea);
-            } else {
-                // For executive summary, copy entire document
-                const text = doc.innerText;
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                textarea.style.position = 'fixed';
-                textarea.style.opacity = '0';
-                document.body.appendChild(textarea);
-                textarea.select();
-                
-                try {
-                    document.execCommand('copy');
-                    alert('✅ Content copied to clipboard!');
-                } catch (err) {
-                    alert('❌ Failed to copy. Please select and copy manually.');
-                }
-                
-                document.body.removeChild(textarea);
-            }
-        }
-        
-        // Auto-fill current date in email fields
-        window.addEventListener('load', function() {
-            const today = new Date().toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
-            
-            // You can add more auto-fill logic here if needed
-        });
     </script>
 </body>
 </html>
